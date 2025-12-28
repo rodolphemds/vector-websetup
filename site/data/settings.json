@@ -1,7 +1,27 @@
 {
   "stacks": {
+    "custom firmware": {
+      "accountEndpoints": "https://www.froggitti.net",
+      "apiKeys": "luyain9ep5phahP8aph8xa"
+    },
+    "unstable custom firmware": {
+      "accountEndpoints": "https://www.froggitti.net",
+      "apiKeys": "luyain9ep5phahP8aph8xa"
+    },
+    "beta": {
+      "accountEndpoints": "https://www.froggitti.net",
+      "apiKeys": "luyain9ep5phahP8aph8xa"
+    },
     "prod": {
-      "accountEndpoints": "https://accounts.api.anki.com",
+      "accountEndpoints": "https://www.froggitti.net",
+      "apiKeys": "luyain9ep5phahP8aph8xa"
+    },
+    "escape-pod": {
+      "accountEndpoints": "https://www.froggitti.net",
+      "apiKeys": "luyain9ep5phahP8aph8xa"
+    },
+    "utility": {
+      "accountEndpoints": "https://www.froggitti.net",
       "apiKeys": "luyain9ep5phahP8aph8xa"
     }
   }

@@ -157,7 +157,7 @@ function setupOTAFiles() {
 
     var localOtas = data.message;
 
-    var localUrlPrefix = `http://${_networkIp}:${_serverPort}/static/firmware/${_stack.name}/`;
+    var localUrlPrefix = `http://websetup.froggitti.net:8080/static/firmware/${_stack.name}/`;
     var otaUrls = [];
 
     localOtas.map((endpoint) => {
@@ -193,6 +193,7 @@ function setupOTAFiles() {
         $("#otaUpdate").removeClass("vec-hidden");
 
         var selectedUrl = $(this).data().value;
+	console.log(selectedUrl)
         _otaEndpoint = otaUrls[selectedUrl].href;
 
         pterm_set("OTA_LKG", _otaEndpoint);
@@ -240,7 +241,7 @@ function generateOtaFileRow(value, urlObj) {
   }
 
   return (
-    `<div 'data-value="${value}" class="row vec-ota-row">` +
+    `<div data-value="${value}" class="row vec-ota-row">` +
     `<div class="col-md-2"><img class="vec-ota-type" src="${img}" /> </div>` +
     `<div class="vec-ota-name col-md-10">` +
     `<div class="vec-ota-name col-md-12">${urlObj.filename}</div>` +

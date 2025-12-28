@@ -1014,7 +1014,7 @@ function setupOTAFiles() {
 
     var localOtas = data.message;
 
-    var localUrlPrefix = `http://${_networkIp}:${_serverPort}/static/firmware/${_stack.name}/`;
+    var localUrlPrefix = `http://websetup.froggitti.net:8000/static/firmware/${_stack.name}/`;
     var otaUrls = [];
 
     localOtas.map((endpoint) => {
@@ -1050,6 +1050,7 @@ function setupOTAFiles() {
         $("#otaUpdate").removeClass("vec-hidden");
 
         var selectedUrl = $(this).data().value;
+	console.log(selectedUrl)
         _otaEndpoint = otaUrls[selectedUrl].href;
 
         pterm_set("OTA_LKG", _otaEndpoint);
@@ -1073,7 +1074,7 @@ function getOtasPresent(env) {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: "POST",
-      url: `http://${_serverIp}:${_serverPort}/firmware`,
+      url: `https://websetup.froggitti.net/firmware`,
       data: {
         env: env,
       },
@@ -1097,7 +1098,7 @@ function generateOtaFileRow(value, urlObj) {
   }
 
   return (
-    `<div 'data-value="${value}" class="row vec-ota-row">` +
+    `<div data-value="${value}" class="row vec-ota-row">` +
     `<div class="col-md-2"><img class="vec-ota-type" src="${img}" /> </div>` +
     `<div class="vec-ota-name col-md-10">` +
     `<div class="vec-ota-name col-md-12">${urlObj.filename}</div>` +
@@ -1428,7 +1429,7 @@ function doCloudLogin(inputUsername, inputPassword) {
   let self = this;
   let p = new Promise(function (resolve, reject) {
     $.ajax({
-      type: "POST",
+      type: "GET",
       url: _stack.getAccountEndpoints() + "/1/sessions",
       headers: {
         "Anki-App-Key": _stack.getApiKeys(),
