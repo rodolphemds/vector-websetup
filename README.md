@@ -17,3 +17,36 @@ Change [line 1077 in /site/js/rts.js](https://github.com/froggitti/websetup.frog
 Configure the program by running `node vector-web-setup.js configure`.
 
 Run the program by running `node vector-web-setup.js serve`.
+
+# How to make this internet accessible?
+
+Forward TCP port 80 and port 443 on your router.
+
+Set up a reverse proxy. I use nginx for this.
+
+Basic nginx reverse proxy configuration:
+
+```
+server {
+        listen       443 ssl;
+        server_name  websetup.silly.net;
+
+        ssl_certificate /etc/letsencrypt/live/websetup.silly.net/fullchain.pem; 
+        ssl_certificate_key /etc/letsencrypt/live/websetup.silly.net/privkey.pem; 
+
+        ssl_session_cache    shared:SSL:1m;
+        ssl_session_timeout  5m;
+
+        ssl_ciphers  HIGH:!aNULL:!MD5;
+        ssl_prefer_server_ciphers  on;
+
+        location / {
+            proxy_pass http://localhost:8000;
+            proxy_set_header Host $host;
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header X-Forwarded-Proto $scheme;
+
+        }
+}
+```
