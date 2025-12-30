@@ -1214,7 +1214,7 @@ function handleDisconnected() {
   clearInterval(_statusInterval);
   $("#boxVectorStatus").addClass("vec-hidden");
   toggleIcon("iconBle", false);
-  setPhase("containerDiscover");
+  setPhase("containerComplete");
 }
 
 function doOta() {
@@ -1322,7 +1322,7 @@ $(document).ready(function () {
   vecBle.onReceive(handleRtsHandshake);
   vecBle.onDisconnected(handleDisconnected);
   vecBle.onCancelSelect(function () {
-    setPhase("containerDiscover");
+    setPhase("containerComplete");
 
     if (_cmdPending) {
       _cmdPending = false;
@@ -1677,7 +1677,7 @@ function HandleHandshake(version) {
     } else if (value.status == 3) {
       // handle OTA complete
       toggleIcon("iconOta", true);
-      setPhase("containerDiscover");
+      setPhase("containerComplete");
     } else {
       // todo: handle failure
     }
