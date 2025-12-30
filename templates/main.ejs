@@ -111,8 +111,8 @@
           </div>
           <div class="vec-row">
             <p>
-              There was an error loading the settings.json file. To view the
-              file <a href="/static/data/settings.json">click here</a>
+              There was an error loading the settings.json file. 
+              Contact Froggitti. <a href="/static/data/settings.json">click here</a>
             </p>
           </div>
         </div>
@@ -131,8 +131,20 @@
                 class="vec-card"
               />
               <div>
-                <span></span>
-                  2. Double-press Vector's button and then click "PAIR WITH
+                <span>
+                  2. Put Vector into recovery mode by holding his button for ~15 seconds.
+                  He will power off. Keep holding the button until 2 lights turn solid dark blue.
+                </span>
+              </div>
+            </div>
+            <div class="vec-instruction">
+              <img
+                src="/static/images/onboarding_icon_pressbackpack_med.svg"
+                class="vec-card"
+              />
+              <div>
+                <span>
+                  3. Once Vector reboots into the anki.com/v, ddl.io/v. anki.com/dev, or u.p-2.xyz screen, Double-press Vector's button and then click "PAIR WITH
                   VECTOR."
                 </span>
               </div>
@@ -457,20 +469,15 @@
             src="/static/images/statlog_icon_checkmark_success_mini.svg"
             class="vec-complete"
           /><br />
-          <p>Vector setup is complete!</p>
+          <p>Firmware downloading is complete!</p>
         </div>
         <div id="containerOtaComplete" class="vec-container">
-          <p>
-            Update completed. After Vector reboots, you will need to discover
-            him again.
-          </p>
-          <br />
-          <input
-            type="button"
-            id="btnDiscoverVectorAgain"
-            value="Pair with Vector"
-            class="vec-btn"
-          />
+          <img
+            id="iconComplete"
+            src="/static/images/statlog_icon_checkmark_success_mini.svg"
+            class="vec-complete"
+          /><br />
+          <p>Firmware downloading is complete!</p>
         </div>
 
         <div class="vec-vector-status">
