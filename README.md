@@ -1,5 +1,6 @@
 # websetup.froggitti.net
 https://websetup.froggitti.net source code.
+Thanks to [kercre123](https://www.github.com/kercre123) for providing the original files for https://websetup.froggitti.net.
 
 # How to run?
 Install [node.js](https://nodejs.org/en/download).
