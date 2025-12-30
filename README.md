@@ -51,4 +51,4 @@ server {
 }
 ```
 
-Use [certbot](https://certbot.eff.org/) to secure your website with HTTPS (it needs it to work)
+Use [certbot](https://certbot.eff.org/) to secure your website with HTTPS (Vector web setup needs HTTPS for web bluetooth to work).
