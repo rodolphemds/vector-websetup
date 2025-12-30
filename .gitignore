@@ -1,7 +1,7 @@
 .DS_Store
 #site/js/rts.js
 #site/data/*
-site/firmware/
+#site/firmware/
 #site/js/bundle-data.js
 #site/css/pterm.css
 .vscode
