@@ -157,7 +157,7 @@ function setupOTAFiles() {
 
     var localOtas = data.message;
 
-    var localUrlPrefix = `http://websetup.froggitti.net:8080/static/firmware/${_stack.name}/`;
+    var localUrlPrefix = `http://vector-websetup.vector-websetup.orb.local:7000/static/firmware/${_stack.name}/`
     var otaUrls = [];
 
     localOtas.map((endpoint) => {

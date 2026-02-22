@@ -1,7 +1,7 @@
-FROM node:lts
-RUN npm install -g digital-dream-labs/vector-web-setup
-RUN vector-web-setup configure
-RUN vector-web-setup ota-sync
-ENV PORT 8000
-EXPOSE 8000
-CMD vector-web-setup serve -p $PORT
+FROM node:22-slim
+WORKDIR /app
+RUN npm install vector-web-setup
+RUN /app/node_modules/.bin/vector-web-setup configure
+ENV PORT=7000
+EXPOSE ${PORT}
+CMD ["sh", "-c", "/app/node_modules/.bin/vector-web-setup serve -p ${PORT} "]

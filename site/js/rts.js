@@ -1014,7 +1014,7 @@ function setupOTAFiles() {
 
     var localOtas = data.message;
 
-    var localUrlPrefix = `http://websetup.froggitti.net:8000/static/firmware/${_stack.name}/`;
+    var localUrlPrefix = `http://vector-websetup.vector-websetup.orb.local:7000/static/firmware/${_stack.name}/`;
     var otaUrls = [];
 
     localOtas.map((endpoint) => {
@@ -1074,7 +1074,7 @@ function getOtasPresent(env) {
   return new Promise((resolve, reject) => {
     $.ajax({
       type: "POST",
-      url: `https://websetup.froggitti.net/firmware`,
+      url: `http://vector-websetup.vector-websetup.orb.local/firmware`,
       data: {
         env: env,
       },
