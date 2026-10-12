@@ -1,3 +1,5 @@
+name: vector_containers
+
 services:
   vector-websetup:
     build:
@@ -6,6 +8,6 @@ services:
     container_name: vector-websetup
     environment:
       PORT: 7000
-    ports:
-      - 7000:7000
+    labels:
+      - dev.orbstack.http-port=7000
     restart: unless-stopped
