@@ -1,4 +1,4 @@
-name: vector_containers
+name: robots_containers   # projet compose commun aux conteneurs des robots du Mac
 
 services:
   vector-websetup:
